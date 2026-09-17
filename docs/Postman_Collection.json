@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "student-management-system-collection",
+		"name": "Student Management System API",
+		"description": "Postman API Collection for testing Student Management System Django REST APIs.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Students (Search & Filter)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/?search=Jane&department=Computer Science Engineering&year=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Jane"
+						},
+						{
+							"key": "department",
+							"value": "Computer Science Engineering"
+						},
+						{
+							"key": "year",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create Student (Valid)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"student_id\": 101,\n    \"name\": \"Jane Doe\",\n    \"email\": \"jane.doe@example.com\",\n    \"department\": \"Computer Science Engineering\",\n    \"year\": 3,\n    \"phone\": \"9876543210\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Create Student (Duplicate ID Error Test)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"student_id\": 101,\n    \"name\": \"John Smith\",\n    \"email\": \"john.smith@example.com\",\n    \"department\": \"Information Technology\",\n    \"year\": 2,\n    \"phone\": \"9123456789\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Single Student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/101/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						"101",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Update Student",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"student_id\": 101,\n    \"name\": \"Jane Updated\",\n    \"email\": \"jane.updated@example.com\",\n    \"department\": \"AI & Data Science\",\n    \"year\": 4,\n    \"phone\": \"9876543210\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/101/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						"101",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Student",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/students/101/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"students",
+						"101",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
