@@ -10,7 +10,7 @@ A full-stack CRUD web application for managing student records built with Python
   - **Create**: Add new student with live field validations.
   - **Read All**: View all student records in a responsive, styled table.
   - **Read One**: View complete student profile details.
-  - **Update**: Edit existing student details (Student ID remains locked as primary key).
+  - **Update**: Edit existing student detailas (Student ID remains locked as primary key).
   - **Delete**: Remove student with explicit confirmation modal dialog.
 - **Zero Sample Data Guarantee**: The SQLite database starts completely empty (0 records) after migrations. Displays `"No students found."` until user manually creates records.
 - **Real-Time Search**: Search students by Student ID, Name, or Email dynamically.
