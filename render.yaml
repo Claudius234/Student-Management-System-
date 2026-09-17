@@ -1,0 +1,18 @@
+services:
+  # Backend Web Service (Django REST API)
+  - type: web
+    name: student-management-backend
+    env: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt && python manage.py migrate
+    startCommand: gunicorn core.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.11
+
+  # Frontend Static Site (React + Vite)
+  - type: static
+    name: student-management-frontend
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
